@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Bear - Official Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .band-name {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            color: #ecf0f1;
+            text-shadow: 0 0 20px rgba(236, 240, 241, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #95a5a6;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Albums Section */
+        .albums-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .album-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .album-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .album-cover {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 0 auto 25px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .album-title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #ecf0f1;
+            letter-spacing: 1px;
+        }
+
+        .album-year {
+            color: #95a5a6;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+
+
+        /* Streaming Services */
+        .streaming-services {
+            margin-top: 25px;
+        }
+
+        .streaming-title {
+            font-size: 1rem;
+            color: #ecf0f1;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .service-links {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .service-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ecf0f1;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            letter-spacing: 0.5px;
+        }
+
+        .service-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .apple-music-icon {
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .apple-music-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .bandcamp-icon {
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .bandcamp-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .spotify-icon {
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .spotify-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .youtube-music-icon {
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .youtube-music-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .amazon-music-icon {
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .amazon-music-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #95a5a6;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 80px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .band-name {
+                font-size: 2.5rem;
+            }
+            
+            .albums-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .album-cover {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .hero-image {
+                height: 300px;
+                max-width: 300px;
+            }
+            
+            .service-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/hero.jpg" alt="Star Bear" class="hero-image">
+            <h1 class="band-name">Star Bear</h1>
+            <p class="tagline"></p>
+        </header>
+
+        <section class="albums-section">
+            <h2 class="section-title">Discography</h2>
+            
+            <div class="albums-grid">
+                <!-- Album 1: Three -->
+                <div class="album-card">
+                    <img src="images/three.jpg" alt="Three" class="album-cover">
+                    <h3 class="album-title">Three</h3>
+                    <p class="album-year">2025</p>
+                    
+                    <div class="streaming-services">
+                        <h4 class="streaming-title">Streaming Services</h4>
+                        <div class="service-links">
+                            <a href="#" style="display: inline-block;">
+                                <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
+                            </a>
+                            <a href="#" class="service-link">Apple Music</a>
+                            <a href="#" style="display: inline-block;">
+                                <img src="images/icons8-youtube-music-96.png" alt="YouTube Music icon" class="youtube-music-icon" />
+                            </a>
+                            <a href="#" style="display: inline-block;">
+                                <img src="images/amazon.png" alt="Amazon Music icon" class="amazon-music-icon" />
+                            </a>
+                            <a href="https://star-bear.bandcamp.com/album/three" style="display: inline-block;">
+                                <img src="images/bandcamp-button-circle-aqua-64.png" alt="Bandcamp icon" class="bandcamp-icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album 2: Tarot -->
+                <div class="album-card">
+                    <img src="images/tarot.jpg" alt="Tarot" class="album-cover">
+                    <h3 class="album-title">Tarot</h3>
+                    <p class="album-year">2024</p>
+                    
+                    <div class="streaming-services">
+                        <h4 class="streaming-title">Streaming Services</h4>
+                        <div class="service-links">
+                            <a href="https://open.spotify.com/album/3NUBCeFm3ElQHIFWg7WhH2?si=Bjh16ORVR2C4euNGjIUlYg" style="display: inline-block;">
+                                <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
+                            </a>
+                            <a href="https://music.apple.com/us/album/tarot/1724215612" style="display: inline-block;">
+                                <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/app-icon-music/standard/en-us" alt="Apple Music app icon" class="apple-music-icon" />
+                            </a>
+                            <a href="https://music.youtube.com/playlist?list=OLAK5uy_ll5tMfjBUOd_D9dDszsHOfgDfYrywxBCw&si=LI_8NfsVyzdbbDWI" style="display: inline-block;">
+                                <img src="images/icons8-youtube-music-96.png" alt="YouTube Music icon" class="youtube-music-icon" />
+                            </a>
+                            <a href="https://music.amazon.com/albums/B0CRH1JX8W?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_EHm2uXzOHfK6Gadbvp635OXZv" style="display: inline-block;">
+                                <img src="images/amazon.png" alt="Amazon Music icon" class="amazon-music-icon" />
+                            </a>
+                            <a href="https://star-bear.bandcamp.com/album/tarot" style="display: inline-block;">
+                                <img src="images/bandcamp-button-circle-aqua-64.png" alt="Bandcamp icon" class="bandcamp-icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album 3: Feathers Shape the Air -->
+                <div class="album-card">
+                    <img src="images/feathers.jpg" alt="Feathers Shape the Air" class="album-cover">
+                    <h3 class="album-title">Feathers Shape the Air</h3>
+                    <p class="album-year">2022</p>
+                    
+                    <div class="streaming-services">
+                        <h4 class="streaming-title">Streaming Services</h4>
+                        <div class="service-links">
+                            <a href="https://open.spotify.com/album/6eu6e4EGQncBnTvFd8YA7d?si=6YVXr9lJRPawAOGeiFy2Iw" style="display: inline-block;">
+                                <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
+                            </a>
+                            <a href="https://music.apple.com/us/album/feathers-shape-the-air/1633133893?itscg=30200&itsct=music_box_appicon&ls=1&app=music&mttnsubad=1633133893" style="display: inline-block;">
+                                <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/app-icon-music/standard/en-us" alt="Apple Music app icon" class="apple-music-icon" />
+                            </a>
+                            <a href="https://music.youtube.com/playlist?list=OLAK5uy_mNpAmzbKaUD4upbVq7cjoKozbxWYHOxCc&si=fLonqdVe7vhciXbh" style="display: inline-block;">
+                                <img src="images/icons8-youtube-music-96.png" alt="YouTube Music icon" class="youtube-music-icon" />
+                            </a>
+                            <a href="https://music.amazon.com/albums/B0B5VW54HQ?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_9Fv0KQhsJoZJTxJLdPFeUblEn" style="display: inline-block;">
+                                <img src="images/amazon.png" alt="Amazon Music icon" class="amazon-music-icon" />
+                            </a>
+                            <a href="https://star-bear.bandcamp.com/album/feathers-shape-the-air" style="display: inline-block;">
+                                <img src="images/bandcamp-button-circle-aqua-64.png" alt="Bandcamp icon" class="bandcamp-icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album 4: Retellings -->
+                <div class="album-card">
+                    <img src="images/retellings.jpg" alt="Retellings" class="album-cover">
+                    <h3 class="album-title">Retellings</h3>
+                    <p class="album-year">2021</p>
+                    
+                    <div class="streaming-services">
+                        <h4 class="streaming-title">Streaming Services</h4>
+                        <div class="service-links">
+                            <a href="https://open.spotify.com/album/5g7nIFgeccYFd2mL1tWeO6?si=h5DN4QC-Ty-RQ1DT02WYWA" style="display: inline-block;">
+                                <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
+                            </a>
+                            <a href="https://music.apple.com/us/album/retellings/1613062843?itscg=30200&itsct=music_box_appicon&ls=1&app=music&mttnsubad=1613062843" style="display: inline-block;">
+                                <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/app-icon-music/standard/en-us" alt="Apple Music app icon" class="apple-music-icon" />
+                            </a>
+                            <a href="https://music.youtube.com/playlist?list=OLAK5uy_lP3OWxBS62ILfcw1vTnjguXFjaqMaNfJY&si=z7O0yjhh7sOUiRff" style="display: inline-block;">
+                                <img src="images/icons8-youtube-music-96.png" alt="YouTube Music icon" class="youtube-music-icon" />
+                            </a>
+                            <a href="https://music.amazon.com/albums/B09TZ8RL26?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_ovMDl2HvPpNa5cvPHbrHctoYA" style="display: inline-block;">
+                                <img src="images/amazon.png" alt="Amazon Music icon" class="amazon-music-icon" />
+                            </a>
+                            <a href="https://star-bear.bandcamp.com/album/retellings" style="display: inline-block;">
+                                <img src="images/bandcamp-button-circle-aqua-64.png" alt="Bandcamp icon" class="bandcamp-icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Star Bear. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html> 
