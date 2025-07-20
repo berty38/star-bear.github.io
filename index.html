@@ -71,16 +71,18 @@
         }
 
         .albums-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         .album-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 30px;
-            text-align: center;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -93,12 +95,17 @@
         }
 
         .album-cover {
-            width: 200px;
-            height: 200px;
+            width: 120px;
+            height: 120px;
             border-radius: 10px;
-            margin: 0 auto 25px;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .album-info {
+            flex: 1;
+            text-align: left;
         }
 
         .album-title {
@@ -111,7 +118,7 @@
 
         .album-year {
             color: #95a5a6;
-            margin-bottom: 20px;
+            margin-bottom: 0;
             font-size: 0.9rem;
         }
 
@@ -119,15 +126,7 @@
 
         /* Streaming Services */
         .streaming-services {
-            margin-top: 25px;
-        }
-
-        .streaming-title {
-            font-size: 1rem;
-            color: #ecf0f1;
-            margin-bottom: 15px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            flex-shrink: 0;
         }
 
         .service-links {
@@ -233,9 +232,14 @@
                 font-size: 2.5rem;
             }
             
-            .albums-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .album-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .album-info {
+                text-align: center;
             }
             
             .album-cover {
@@ -259,32 +263,36 @@
         <header>
             <img src="images/hero.jpg" alt="Star Bear" class="hero-image">
             <h1 class="band-name">Star Bear</h1>
-            <p class="tagline"></p>
+            <p class="tagline">The musical hobby project of Bert Huang.</p>
         </header>
+        <p>Listen to my albums anywhere you stream music. You can also download them from Bandcamp for any price (I recommend $0).</p>
 
         <section class="albums-section">
-            <h2 class="section-title">Discography</h2>
+            <h2 class="section-title">Albums</h2>
             
             <div class="albums-grid">
                 <!-- Album 1: Three -->
                 <div class="album-card">
                     <img src="images/three.jpg" alt="Three" class="album-cover">
-                    <h3 class="album-title">Three</h3>
-                    <p class="album-year">2025</p>
+                    <div class="album-info">
+                        <h3 class="album-title">Three</h3>
+                        <p class="album-year">2025</p>
+                    </div>
                     
                     <div class="streaming-services">
-                        <h4 class="streaming-title">Streaming Services</h4>
                         <div class="service-links">
-                            <a href="#" style="display: inline-block;">
+                            <!-- <a href="#" style="display: inline-block;">
                                 <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
                             </a>
-                            <a href="#" class="service-link">Apple Music</a>
+                            <a href="https://music.apple.com/us/album/tarot/1724215612" style="display: inline-block;">
+                                <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/app-icon-music/standard/en-us" alt="Apple Music app icon" class="apple-music-icon" />
+                            </a>
                             <a href="#" style="display: inline-block;">
                                 <img src="images/icons8-youtube-music-96.png" alt="YouTube Music icon" class="youtube-music-icon" />
                             </a>
                             <a href="#" style="display: inline-block;">
                                 <img src="images/amazon.png" alt="Amazon Music icon" class="amazon-music-icon" />
-                            </a>
+                            </a> -->
                             <a href="https://star-bear.bandcamp.com/album/three" style="display: inline-block;">
                                 <img src="images/bandcamp-button-circle-aqua-64.png" alt="Bandcamp icon" class="bandcamp-icon" />
                             </a>
@@ -295,11 +303,12 @@
                 <!-- Album 2: Tarot -->
                 <div class="album-card">
                     <img src="images/tarot.jpg" alt="Tarot" class="album-cover">
-                    <h3 class="album-title">Tarot</h3>
-                    <p class="album-year">2024</p>
+                    <div class="album-info">
+                        <h3 class="album-title">Tarot</h3>
+                        <p class="album-year">2024</p>
+                    </div>
                     
                     <div class="streaming-services">
-                        <h4 class="streaming-title">Streaming Services</h4>
                         <div class="service-links">
                             <a href="https://open.spotify.com/album/3NUBCeFm3ElQHIFWg7WhH2?si=Bjh16ORVR2C4euNGjIUlYg" style="display: inline-block;">
                                 <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
@@ -323,11 +332,12 @@
                 <!-- Album 3: Feathers Shape the Air -->
                 <div class="album-card">
                     <img src="images/feathers.jpg" alt="Feathers Shape the Air" class="album-cover">
-                    <h3 class="album-title">Feathers Shape the Air</h3>
-                    <p class="album-year">2022</p>
+                    <div class="album-info">
+                        <h3 class="album-title">Feathers Shape the Air</h3>
+                        <p class="album-year">2022</p>
+                    </div>
                     
                     <div class="streaming-services">
-                        <h4 class="streaming-title">Streaming Services</h4>
                         <div class="service-links">
                             <a href="https://open.spotify.com/album/6eu6e4EGQncBnTvFd8YA7d?si=6YVXr9lJRPawAOGeiFy2Iw" style="display: inline-block;">
                                 <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
@@ -351,11 +361,12 @@
                 <!-- Album 4: Retellings -->
                 <div class="album-card">
                     <img src="images/retellings.jpg" alt="Retellings" class="album-cover">
-                    <h3 class="album-title">Retellings</h3>
-                    <p class="album-year">2021</p>
+                    <div class="album-info">
+                        <h3 class="album-title">Retellings</h3>
+                        <p class="album-year">2021</p>
+                    </div>
                     
                     <div class="streaming-services">
-                        <h4 class="streaming-title">Streaming Services</h4>
                         <div class="service-links">
                             <a href="https://open.spotify.com/album/5g7nIFgeccYFd2mL1tWeO6?si=h5DN4QC-Ty-RQ1DT02WYWA" style="display: inline-block;">
                                 <img src="images/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify icon" class="spotify-icon" />
